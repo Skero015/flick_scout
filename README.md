@@ -37,7 +37,7 @@ This app allows users to search for movies by title. The home screen displays a 
 
 **API Key:**
 
-You'll need to obtain an API key from [OMDb API](http://www.omdbapi.com/) and replace `"YOUR_API_KEY"` with your actual key in the `lib/core/utils/constants.dart` file.
+You'll need to obtain an API key from [OMDb API](http://www.omdbapi.com/) and replace `"YOUR_API_KEY"` with your actual key in the `lib/core/utils/constants.dart` file (include a .env file in the project root and put API_KEY='Your api key' ).
 
 
 ## Dependencies
@@ -45,8 +45,13 @@ You'll need to obtain an API key from [OMDb API](http://www.omdbapi.com/) and re
 * `flutter_bloc`: For BLoC state management.
 * `http`: For making HTTP requests.
 * `cached_network_image`: For image caching and loading.
-* `flutter_rating_bar`: For interactive star ratings display.
 * `shimmer`: For shimmer loading effects.
+* `bloc_test`: For testing blocs
+* `mocktail`: For mocking dependencies in unit tests.
+* `flutter_dotenv`:  For loading environment variables from a .env file.
+* `sizer`: For responsive UI design (sizing and spacing).
+* `shimmer`: For creating shimmer loading effects.
+* `flutter_svg`: For displaying SVG images 
 
 ## Folder structure
 movie_search_app/
@@ -98,5 +103,4 @@ movie_search_app/
 * **Filtering and Sorting:**  Add options to filter movies by genre, year, or rating, and allow sorting by different criteria.
 * **Favorites:** Allow users to save their favorite movies.
 * **Theming:** Implement a more sophisticated theming solution.
-* **Accessibility:**  Improve accessibility features for users with disabilities.
 
