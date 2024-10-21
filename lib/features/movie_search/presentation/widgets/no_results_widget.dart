@@ -7,29 +7,32 @@ class NoResultsScreenPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20,),
-        child: Column(
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.8,
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: SvgPicture.string(
-                  noResultsIllistration,
-                  fit: BoxFit.scaleDown,
-                ),
+    return SingleChildScrollView(
+      child: Container(
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20,),
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: SvgPicture.string(
+                        noResultsIllistration,
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
+                  ),
+                  const ErrorInfo(
+                    title: "No Results!",
+                    description:
+                    "We couldn't find any matches for your search. Try using a different search term.",
+                  ),
+                ],
               ),
             ),
-            const ErrorInfo(
-              title: "No Results!",
-              description:
-              "We couldn't find any matches for your search. Try using a different search term.",
-            ),
-          ],
         ),
-      ),
     );
   }
 }
@@ -59,12 +62,13 @@ class ErrorInfo extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .headlineSmall!
-                  .copyWith(fontWeight: FontWeight.bold),
+                  .copyWith(fontWeight: FontWeight.bold, color: Colors.white70),
             ),
             SizedBox(height: 2.h),
             Text(
               description,
               textAlign: TextAlign.center,
+              style: const TextStyle(color: Colors.white70),
             ),
             SizedBox(height: 2.h),
           ],
